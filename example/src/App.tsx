@@ -1,5 +1,5 @@
-import { Component } from 'solid-js';
-import { Button, Card, CardHeader, CardBody, CardFooter } from '@livelist/core';
+import { Button, Card, CardBody, CardFooter, CardHeader } from '@livelist/core'
+import { Component } from 'solid-js'
 
 const App: Component = () => {
   return (
@@ -63,7 +63,7 @@ const App: Component = () => {
         </section>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

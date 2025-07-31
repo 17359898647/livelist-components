@@ -1,20 +1,20 @@
 {
   "name": "@livelist/core",
+  "type": "module",
   "version": "0.0.1",
   "description": "Core components for livelist-components library",
-  "type": "module",
   "sideEffects": false,
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "solid": "./src/index.tsx",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./styles": "./dist/styles.css"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "src"
@@ -29,11 +29,11 @@
     "solid-js": "^1.9.0"
   },
   "devDependencies": {
+    "@types/node": "^22.10.1",
     "solid-js": "^1.9.3",
     "vite": "^6.0.3",
-    "vite-plugin-solid": "^2.11.0",
     "vite-plugin-dts": "^4.3.0",
-    "@types/node": "^22.10.1"
+    "vite-plugin-solid": "^2.11.0"
   },
   "publishConfig": {
     "access": "public"
