@@ -1,0 +1,28 @@
+{
+  "name": "livelist-components",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A modern SolidJS component library",
+  "author": "Your Name",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "typecheck": "pnpm -r run typecheck",
+    "clean": "pnpm -r run clean && rimraf node_modules",
+    "changeset": "changeset",
+    "version": "changeset version && pnpm install --no-frozen-lockfile",
+    "release": "pnpm run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.9",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.2"
+  }
+}
