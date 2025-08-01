@@ -42,15 +42,15 @@ jobs:
       - name: Run tests
         run: pnpm typecheck && pnpm lint
 
-      # 修复的认证步骤
       - name: Setup npm authentication
         run: |
           echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" > ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      # 修复的发布命令
       - name: Publish to npm
-        run: pnpm exec changeset publish --no-git-tag
+        run: pnpm exec changeset publish --no-git-tag --access public
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
