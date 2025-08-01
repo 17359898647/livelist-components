@@ -1,5 +1,11 @@
 # livelist-components
 
+## 0.2.19
+
+### Patch Changes
+
+- Patch release for npm publishing test
+
 ## 0.2.2
 
 ### Patch Changes
