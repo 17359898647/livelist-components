@@ -99,7 +99,7 @@ importers:
 
   example:
     dependencies:
-      '@livelist/core':
+      livelist-components:
         specifier: workspace:*
         version: link:../packages/core
       solid-js:

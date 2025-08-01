@@ -3,7 +3,7 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
-This is a SolidJS component library (@livelist/core) built with TypeScript and Vite. It uses pnpm workspaces for monorepo management.
+This is a SolidJS component library (livelist-components) built with TypeScript and Vite. It uses pnpm workspaces for monorepo management.
 
 ## Key Commands
 
@@ -84,3 +84,4 @@ No testing framework is currently set up. When implementing tests, consider addi
 - Library watches for changes automatically during `pnpm dev`
 - Components are tree-shakeable (sideEffects: false)
 - All exports must be added to `/packages/core/src/index.tsx`
+- Package is published as `livelist-components` (without scope)

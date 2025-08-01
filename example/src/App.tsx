@@ -1,6 +1,6 @@
-import { Button } from '@livelist/core'
+import { Button } from 'livelist-components'
 import { Component } from 'solid-js'
-import '@livelist/core/index.css'
+import 'livelist-components/index.css'
 
 const App: Component = () => {
   return (

@@ -7,8 +7,8 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
-      "@livelist/core": ["packages/core/src"],
-      "@livelist/core/*": ["packages/core/src/*"],
+      "livelist-components": ["packages/core/src"],
+      "livelist-components/*": ["packages/core/src/*"],
       "~/*": ["packages/core/src/*"]
     },
     "resolveJsonModule": true,
