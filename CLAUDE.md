@@ -53,7 +53,9 @@ Components follow these conventions:
 2. Props interfaces extending native HTML attributes (e.g., `ButtonHTMLAttributes`)
 3. Use `splitProps` to separate custom props from native attributes
 4. Export both component and props interface
-5. Styling via Tailwind CSS utility classes
+5. Styling via Tailwind CSS utility classes with `livelist-` prefix
+6. Components use Kobalte for accessible primitives (e.g., Button, NumberField)
+7. Use class-variance-authority (cva) for variant styling
 
 Example pattern:
 ```tsx
@@ -72,7 +74,7 @@ export const Button: Component<ButtonProps> = (props) => {
 ### Build Configuration
 - **TypeScript**: Strict mode with ESNext target, SolidJS JSX transform
 - **Vite**: Builds library as ES modules only with external dependencies
-- **CSS**: Components use Tailwind classes; example app includes full Tailwind setup
+- **CSS**: Components use Tailwind classes with `livelist-` prefix; example app includes full Tailwind setup
 - **Module System**: Pure ESM (no CommonJS builds)
 
 ### Testing
@@ -85,3 +87,4 @@ No testing framework is currently set up. When implementing tests, consider addi
 - Components are tree-shakeable (sideEffects: false)
 - All exports must be added to `/packages/core/src/index.tsx`
 - Package is published as `livelist-components` (without scope)
+- Tailwind CSS classes use `livelist-` prefix to avoid conflicts
