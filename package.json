@@ -22,11 +22,14 @@
     "version": "changeset version && pnpm install --no-frozen-lockfile",
     "release": "pnpm run build && changeset publish"
   },
+  "dependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@changesets/cli": "catalog:",
+    "eslint": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:"
+  },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.0.0",
-    "@changesets/cli": "^2.27.9",
-    "eslint": "^9.32.0",
-    "rimraf": "^6.0.1",
-    "typescript": "^5.8.3"
+    "eslint-plugin-solid": "catalog:"
   }
 }
