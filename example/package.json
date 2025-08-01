@@ -16,9 +16,6 @@
   },
   "devDependencies": {
     "@types/node": "catalog:",
-    "autoprefixer": "catalog:",
-    "postcss": "catalog:",
-    "tailwindcss": "catalog:",
     "vite": "catalog:",
     "vite-plugin-solid": "catalog:"
   }
