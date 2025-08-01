@@ -1,5 +1,6 @@
 import { Button, Card, CardBody, CardFooter, CardHeader } from '@livelist/core'
 import { Component } from 'solid-js'
+import '@livelist/core/index.css'
 
 const App: Component = () => {
   return (
