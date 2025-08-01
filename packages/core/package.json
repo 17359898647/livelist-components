@@ -29,12 +29,18 @@
     "solid-js": "^1.9.0"
   },
   "dependencies": {
+    "@kobalte/core": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
+    "dayjs": "catalog:",
+    "lodash-es": "catalog:",
+    "tailwind-merge": "catalog:",
+    "tailwindcss-animate": "catalog:",
     "vite": "catalog:",
     "vite-plugin-solid": "catalog:"
   },
   "devDependencies": {
+    "@types/lodash-es": "catalog:",
     "@types/node": "catalog:",
     "autoprefixer": "catalog:",
     "postcss": "catalog:",

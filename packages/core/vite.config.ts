@@ -1,4 +1,5 @@
 import solidPlugin from 'vite-plugin-solid'
+import { includes, some } from 'lodash-es'
 import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
@@ -28,6 +29,16 @@ export default defineConfig({
         globals: {
           'solid-js': 'Solid',
         },
+      },
+      onwarn(warning, warn) {
+        if (
+          warning.code === 'UNUSED_EXTERNAL_IMPORT'
+          && warning.ids
+          && some(warning.ids, id => includes(id, 'node_modules'))
+        ) {
+          return
+        }
+        warn(warning)
       },
     },
     target: 'esnext',
