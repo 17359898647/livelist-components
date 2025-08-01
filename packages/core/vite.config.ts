@@ -1,4 +1,3 @@
-import tailwindcss from '@tailwindcss/vite'
 import solidPlugin from 'vite-plugin-solid'
 import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
@@ -6,7 +5,6 @@ import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   plugins: [
-    tailwindcss() as any,
     solidPlugin(),
     dts({
       insertTypesEntry: true,
