@@ -7,6 +7,8 @@ export default eslint({
     '.claude/*',
     'swagger-spec.json',
     'CLAUDE.md',
+    '.github/*',
+    'dist/*',
   ],
   solid: true,
   yaml: true,
