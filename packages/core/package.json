@@ -36,6 +36,9 @@
   },
   "devDependencies": {
     "@types/node": "catalog:",
+    "autoprefixer": "catalog:",
+    "postcss": "catalog:",
+    "tailwindcss": "catalog:",
     "vite-plugin-dts": "catalog:"
   },
   "publishConfig": {
