@@ -6,7 +6,6 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "solid": "./src/index.tsx",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
@@ -16,8 +15,7 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "dev": "vite build --watch",
