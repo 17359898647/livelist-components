@@ -11,7 +11,7 @@
     "pnpm": ">=8"
   },
   "scripts": {
-    "dev": "pnpm --filter @livelist/core dev & sleep 3 && pnpm --filter example dev",
+    "dev": "pnpm --filter livelist-components dev & sleep 3 && pnpm --filter example dev",
     "build": "pnpm -r run build",
     "test": "pnpm -r run test",
     "lint": "eslint .",

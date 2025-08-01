@@ -29,6 +29,7 @@
     "solid-js": "^1.9.0"
   },
   "dependencies": {
+    "@corvu/otp-field": "catalog:",
     "@kobalte/core": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
