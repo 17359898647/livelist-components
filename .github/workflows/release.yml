@@ -33,6 +33,10 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      # 添加 Changesets 版本管理
+      - name: Apply version updates
+        run: pnpm exec changeset version
+      
       - name: Build packages
         run: pnpm build
 
@@ -40,9 +44,7 @@ jobs:
         run: pnpm typecheck && pnpm lint
 
       - name: Publish to npm
-        run: |
-          cd packages/core
-          npm publish --access public
+        run: pnpm exec changeset publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -51,6 +53,17 @@ jobs:
         with:
           generate_release_notes: true
           files: |
-            packages/core/dist/*
+            packages/**/dist/**/* # 包含所有包的 dist 目录
+            CHANGELOG.md          # 包含变更日志
+          tag_name: ${{ github.ref_name }} # 使用触发的标签
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 可选：推送版本更新回仓库
+      - name: Commit version updates
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "chore: release ${{ github.ref_name }}"
+          git push
