@@ -30,10 +30,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
       
       # 生成 changelog（根据您的命令）
-      - name: Generate changelog
-        run: pnpm dix changelogithub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Generate changelog
+      #   run: pnpm dix changelogithub
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       # 发布到 npm - 取消注释并保留 token
       - name: Install dependencies
