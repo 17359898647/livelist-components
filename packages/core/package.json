@@ -1,7 +1,7 @@
 {
   "name": "livelist-components",
   "type": "module",
-  "version": "0.2.19",
+  "version": "0.2.20",
   "packageManager": "pnpm@9.14.2",
   "description": "Core components for livelist-components library",
   "sideEffects": false,
