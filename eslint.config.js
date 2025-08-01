@@ -6,6 +6,7 @@ export default eslint({
     'swagger-docs/*',
     '.claude/*',
     'swagger-spec.json',
+    'CLAUDE.md',
   ],
   solid: true,
   yaml: true,
