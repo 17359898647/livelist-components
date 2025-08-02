@@ -13,6 +13,7 @@ jobs:
   release:
     name: Release to npm
     runs-on: ubuntu-latest
+    environment: action
 
     steps:
       - name: 📥 Checkout repository
