@@ -40,11 +40,6 @@ jobs:
       - name: 🛠️ Build packages
         run: pnpm --filter livelist-components build
 
-      - name: 🧾 Generate changelog
-        run: pnpm dlx changeloghithub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - run: pnpm install
       - run: pnpm publish --no-git-checks -r --access public
         env:
