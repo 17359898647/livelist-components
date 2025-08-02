@@ -2,10 +2,8 @@ name: Release
 
 on:
   push:
-    branches:
-      - main
-    # tags:
-    #   - 'v*' # 只在推送符合 v 开头的 tag 时触发
+    tags:
+      - 'v*' # 只在推送符合 v 开头的 tag 时触发
 
 permissions:
   contents: write
@@ -39,6 +37,10 @@ jobs:
 
       - name: 🛠️ Build packages
         run: pnpm --filter livelist-components build
+
+      - run: pnpm dlx changelogithub
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - run: pnpm install
       - run: pnpm publish --no-git-checks -r --access public
