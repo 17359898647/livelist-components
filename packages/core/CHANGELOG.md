@@ -1,5 +1,11 @@
 # livelist-components
 
+## 0.2.27
+
+### Patch Changes
+
+- update
+
 ## 0.2.26
 
 ### Patch Changes
