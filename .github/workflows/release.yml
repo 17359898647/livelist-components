@@ -4,62 +4,49 @@ on:
   push:
     branches:
       - main
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+    # tags:
+    #   - 'v*' # 只在推送符合 v 开头的 tag 时触发
 
 permissions:
   contents: write
-  pull-requests: write
-  packages: write
   id-token: write
 
 jobs:
   release:
-    name: Release
+    name: Release to npm
     runs-on: ubuntu-latest
-    environment: action
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
+    environment: action # 🔑 如你 NPM_TOKEN 存在于该环境中
 
-      - name: Setup pnpm
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 为 changelog 和 tag 生成保留完整历史
+
+      - name: ⚙️ Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9.14.2
 
-      - name: Setup Node.js 20
+      - name: 🧰 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version: lts/*
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install Dependencies
+      - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build core package
+      - name: 🛠️ Build packages
         run: pnpm --filter livelist-components build
 
-      - name: Creating .npmrc
-        run: |
-          echo "NPM_TOKEN ends with: ...${NPM_TOKEN: -10}"
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > "$HOME/.npmrc"
-          cp "$HOME/.npmrc" ./.npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Verify npm authentication
-        run: |
-          echo "Checking npm authentication..."
-          npm whoami || echo "npm whoami failed, but continuing..."
-
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: pnpm exec changeset publish
-          title: 'chore: release packages'
-          commit: 'chore: release packages'
+      - name: 🧾 Generate changelog
+        run: pnpm dlx changeloghithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - run: pnpm install
+      - run: pnpm publish --no-git-checks -r --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_CONFIG_PROVENANCE: true
