@@ -41,6 +41,7 @@ jobs:
 
       - name: Creating .npmrc
         run: |
+          echo "NPM_TOKEN ends with: ...${NPM_TOKEN: -10}"
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > "$HOME/.npmrc"
           cp "$HOME/.npmrc" ./.npmrc
         env:
