@@ -13,7 +13,6 @@ jobs:
   release:
     name: Release to npm
     runs-on: ubuntu-latest
-    environment: action # 🔑 如你 NPM_TOKEN 存在于该环境中
 
     steps:
       - name: 📥 Checkout repository
