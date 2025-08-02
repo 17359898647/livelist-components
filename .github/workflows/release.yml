@@ -23,14 +23,13 @@ jobs:
 
       - name: ⚙️ Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9.14.2
 
       - name: 🧰 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
           registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
 
       - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
@@ -38,12 +37,13 @@ jobs:
       - name: 🛠️ Build packages
         run: pnpm --filter livelist-components build
 
-      - run: pnpm dlx changelogithub
+      - name: 📋 Generate changelog
+        run: pnpm dlx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - run: pnpm install
-      - run: pnpm publish --no-git-checks -r --access public
+      - name: 📤 Publish to npm
+        run: pnpm publish --no-git-checks -r --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_CONFIG_PROVENANCE: true

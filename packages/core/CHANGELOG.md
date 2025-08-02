@@ -1,5 +1,11 @@
 # livelist-components
 
+## 0.2.28
+
+### Patch Changes
+
+- update release.yml
+
 ## 0.2.27
 
 ### Patch Changes
