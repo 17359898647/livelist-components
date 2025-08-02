@@ -48,3 +48,6 @@ coverage/
 
 # Changeset
 .changeset/pr-*.json
+
+# NPM
+.npmrc

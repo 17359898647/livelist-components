@@ -36,22 +36,26 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build core package
+        run: pnpm --filter livelist-components build
+
       - name: Creating .npmrc
         run: |
-          cat << EOF > "$HOME/.npmrc"
-          //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > "$HOME/.npmrc"
+          cp "$HOME/.npmrc" ./.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Build core package
-        run: pnpm --filter livelist-components build
+      - name: Verify npm authentication
+        run: |
+          echo "Checking npm authentication..."
+          npm whoami || echo "npm whoami failed, but continuing..."
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm release
+          publish: pnpm exec changeset publish
           title: 'chore: release packages'
           commit: 'chore: release packages'
         env:
