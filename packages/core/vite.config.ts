@@ -7,7 +7,9 @@ import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
   plugins: [
-    UnoCSS(),
+    UnoCSS({
+      configFile: resolve(__dirname, 'uno.config.ts'),
+    }),
     solidPlugin(),
     dts({
       insertTypesEntry: true,
