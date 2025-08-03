@@ -55,7 +55,7 @@ const OTPFieldSlot: Component<ComponentProps<'div'> & { index: number }> = (prop
       {char()}
       <Show when={showFakeCaret()}>
         <div class="livelist-flex livelist-pointer-events-none livelist-items-center livelist-inset-0 livelist-justify-center livelist-absolute">
-          <div class="livelist-animate-caret-blink livelist-bg-foreground livelist-h-4 livelist-w-px livelist-duration-1000" />
+          <div class="livelist-bg-foreground livelist-h-4 livelist-w-px livelist-duration-1000 livelist-animate-caret-blink" />
         </div>
       </Show>
     </div>
