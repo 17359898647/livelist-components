@@ -71,7 +71,7 @@ function NumberFieldIncrementTrigger<T extends ValidComponent = 'button'>(props:
   return (
     <NumberFieldPrimitive.IncrementTrigger
       class={cn(
-        'livelist-absolute livelist-right-1 livelist-top-1 livelist-inline-flex livelist-w-4 livelist-h-4 livelist-items-center livelist-justify-center',
+        'livelist-absolute livelist-right-1 livelist-top-1 livelist-inline-flex livelist-size-4 livelist-items-center livelist-justify-center',
         local.class,
       )}
       {...others}
@@ -87,7 +87,7 @@ function NumberFieldIncrementTrigger<T extends ValidComponent = 'button'>(props:
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="livelist-w-4 livelist-h-4"
+            class="livelist-size-4"
           >
             <path d="M6 15l6 -6l6 6" />
           </svg>
@@ -113,7 +113,7 @@ function NumberFieldDecrementTrigger<T extends ValidComponent = 'button'>(props:
   return (
     <NumberFieldPrimitive.DecrementTrigger
       class={cn(
-        'livelist-absolute livelist-bottom-1 livelist-right-1 livelist-inline-flex livelist-w-4 livelist-h-4 livelist-items-center livelist-justify-center',
+        'livelist-absolute livelist-bottom-1 livelist-right-1 livelist-inline-flex livelist-size-4 livelist-items-center livelist-justify-center',
         local.class,
       )}
       {...others}
@@ -129,7 +129,7 @@ function NumberFieldDecrementTrigger<T extends ValidComponent = 'button'>(props:
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="livelist-w-4 livelist-h-4"
+            class="livelist-size-4"
           >
             <path d="M6 9l6 6l6 -6" />
           </svg>

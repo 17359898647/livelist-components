@@ -18,7 +18,7 @@ export default defineConfig({
   content: {
     pipeline: {
       include: [
-        /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+        /\.([jt]sx)($|\?)/,
         'src/**/*.{js,ts,tsx}',
       ],
     },
@@ -118,7 +118,6 @@ export default defineConfig({
       },
     },
   },
-  shortcuts: [],
   preflights: [
     {
       getCSS: () => `

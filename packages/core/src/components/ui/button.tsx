@@ -9,7 +9,7 @@ import { splitProps } from 'solid-js'
 import { cn } from '~/lib/utils'
 
 const buttonVariants = cva(
-  'livelist-inline-flex livelist-items-center livelist-justify-center livelist-gap-2 livelist-whitespace-nowrap livelist-rounded-md livelist-text-sm livelist-font-medium livelist-ring-offset-background livelist-transition-colors focus-visible:livelist-outline-none focus-visible:livelist-ring-2 focus-visible:livelist-ring-ring focus-visible:livelist-ring-offset-2 disabled:livelist-pointer-events-none disabled:livelist-opacity-50 [&_svg]:livelist-pointer-events-none [&_svg]:livelist-w-4 [&_svg]:livelist-h-4 [&_svg]:livelist-shrink-0',
+  'livelist-inline-flex livelist-items-center livelist-justify-center livelist-gap-2 livelist-whitespace-nowrap livelist-rounded-md livelist-text-sm livelist-font-medium livelist-ring-offset-background livelist-transition-colors focus-visible:livelist-outline-none focus-visible:livelist-ring-2 focus-visible:livelist-ring-ring focus-visible:livelist-ring-offset-2 disabled:livelist-pointer-events-none disabled:livelist-opacity-50 [&_svg]:livelist-pointer-events-none [&_svg]:livelist-size-4 [&_svg]:livelist-shrink-0',
   {
     variants: {
       variant: {
@@ -24,7 +24,7 @@ const buttonVariants = cva(
         default: 'livelist-h-10 livelist-px-4 livelist-py-2',
         sm: 'livelist-h-9 livelist-px-3 livelist-text-xs',
         lg: 'livelist-h-11 livelist-px-8',
-        icon: 'livelist-w-10 livelist-h-10',
+        icon: 'livelist-size-10',
       },
     },
     defaultVariants: {

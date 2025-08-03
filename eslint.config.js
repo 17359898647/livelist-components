@@ -10,6 +10,14 @@ export default eslint({
     '**/dist/**',
     '.github/**',
   ],
+  unocss: {
+    overrides: {
+      'unocss/enforce-class-compile': {
+        prefix: 'livelist-',
+      },
+    },
+  },
+  pnpm: true,
   solid: true,
   yaml: true,
   typescript: {

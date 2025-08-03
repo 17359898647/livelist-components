@@ -26,11 +26,15 @@
   "dependencies": {
     "@antfu/eslint-config": "catalog:",
     "@changesets/cli": "catalog:",
+    "@unocss/preset-rem-to-px": "catalog:",
+    "@unocss/preset-wind4": "catalog:",
     "eslint": "catalog:",
     "rimraf": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "unocss": "catalog:"
   },
   "devDependencies": {
+    "@unocss/eslint-plugin": "catalog:",
     "eslint-plugin-solid": "catalog:"
   }
 }

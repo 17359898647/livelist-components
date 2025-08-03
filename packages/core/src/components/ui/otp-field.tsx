@@ -41,7 +41,7 @@ const OTPFieldSlot: Component<ComponentProps<'div'> & { index: number }> = (prop
   return (
     <div
       class={cn(
-        'livelist-group livelist-relative livelist-flex livelist-w-10 livelist-h-10 livelist-items-center livelist-justify-center livelist-border-y livelist-border-r livelist-border-input livelist-text-sm first:livelist-rounded-l-md first:livelist-border-l last:livelist-rounded-r-md',
+        'livelist-group livelist-relative livelist-flex livelist-size-10 livelist-items-center livelist-justify-center livelist-border-y livelist-border-r livelist-border-input livelist-text-sm first:livelist-rounded-l-md first:livelist-border-l last:livelist-rounded-r-md',
         local.class,
       )}
       {...others}
@@ -54,8 +54,8 @@ const OTPFieldSlot: Component<ComponentProps<'div'> & { index: number }> = (prop
       />
       {char()}
       <Show when={showFakeCaret()}>
-        <div class="livelist-pointer-events-none livelist-absolute livelist-inset-0 livelist-flex livelist-items-center livelist-justify-center">
-          <div class="livelist-h-4 livelist-w-px livelist-animate-caret-blink livelist-bg-foreground livelist-duration-1000" />
+        <div class="livelist-flex livelist-pointer-events-none livelist-items-center livelist-inset-0 livelist-justify-center livelist-absolute">
+          <div class="livelist-bg-foreground livelist-h-4 livelist-w-px livelist-duration-1000 livelist-animate-bounce-alt" />
         </div>
       </Show>
     </div>
@@ -73,7 +73,7 @@ const OTPFieldSeparator: Component<ComponentProps<'div'>> = (props) => {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="livelist-w-6 livelist-h-6"
+        class="livelist-size-6"
       >
         <circle cx="12.1" cy="12.1" r="1" />
       </svg>

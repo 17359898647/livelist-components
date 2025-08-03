@@ -34,19 +34,20 @@
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "dayjs": "catalog:",
-    "lodash-es": "catalog:"
+    "lodash-es": "catalog:",
+    "tailwind-merge": "catalog:"
   },
   "devDependencies": {
     "@types/lodash-es": "catalog:",
     "@types/node": "catalog:",
-    "@unocss/postcss": "^66.4.0",
-    "@unocss/preset-rem-to-px": "^66.4.0",
-    "@unocss/preset-wind4": "^66.4.0",
-    "@unocss/transformer-directives": "^66.4.0",
-    "@unocss/transformer-variant-group": "^66.4.0",
+    "@unocss/postcss": "catalog:",
+    "@unocss/preset-rem-to-px": "catalog:",
+    "@unocss/preset-wind4": "catalog:",
+    "@unocss/transformer-directives": "catalog:",
+    "@unocss/transformer-variant-group": "catalog:",
     "autoprefixer": "catalog:",
     "postcss": "catalog:",
-    "unocss": "^66.4.0",
+    "unocss": "catalog:",
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:",
     "vite-plugin-solid": "catalog:"
