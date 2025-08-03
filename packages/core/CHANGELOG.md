@@ -1,5 +1,11 @@
 # livelist-components
 
+## 0.2.30
+
+### Patch Changes
+
+- tailwindcss to unocss
+
 ## 0.2.29
 
 ### Patch Changes
