@@ -41,7 +41,7 @@ const OTPFieldSlot: Component<ComponentProps<'div'> & { index: number }> = (prop
   return (
     <div
       class={cn(
-        'livelist-group livelist-relative livelist-flex livelist-size-10 livelist-items-center livelist-justify-center livelist-border-y livelist-border-r livelist-border-input livelist-text-sm first:livelist-rounded-l-md first:livelist-border-l last:livelist-rounded-r-md',
+        'livelist-group livelist-relative livelist-flex livelist-w-10 livelist-h-10 livelist-items-center livelist-justify-center livelist-border-y livelist-border-r livelist-border-input livelist-text-sm first:livelist-rounded-l-md first:livelist-border-l last:livelist-rounded-r-md',
         local.class,
       )}
       {...others}
@@ -73,7 +73,7 @@ const OTPFieldSeparator: Component<ComponentProps<'div'>> = (props) => {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="livelist-size-6"
+        class="livelist-w-6 livelist-h-6"
       >
         <circle cx="12.1" cy="12.1" r="1" />
       </svg>
