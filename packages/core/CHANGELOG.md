@@ -1,5 +1,11 @@
 # livelist-components
 
+## 1.0.0
+
+### Major Changes
+
+- keywords
+
 ## 0.2.30
 
 ### Patch Changes
