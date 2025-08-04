@@ -31,11 +31,12 @@ pnpm dev              # Start Vite dev server (http://localhost:5173)
 pnpm build            # Build example app
 ```
 
-### Publishing
+### Publishing & Versioning
 ```bash
 pnpm changeset        # Create a new changeset for version bumps
 pnpm version          # Apply changesets and update versions
 pnpm release          # Build and publish to npm
+pnpm tag:push         # Create and push git tag from package version
 ```
 
 ## Architecture
@@ -46,6 +47,7 @@ pnpm release          # Build and publish to npm
   - `src/index.tsx` - Central export file for all components
   - `dist/` - Build output (ES modules + TypeScript declarations)
 - `/example/` - Demo SolidJS app showcasing components with Tailwind CSS
+- `/scripts/` - Utility scripts (e.g., tag-and-push.sh for versioning)
 
 ### Component Patterns
 Components follow these conventions:
@@ -60,6 +62,16 @@ Components follow these conventions:
 Example pattern:
 ```tsx
 import { Component, JSX, splitProps } from 'solid-js'
+import { cva } from 'class-variance-authority'
+
+const buttonVariants = cva('livelist-base-classes', {
+  variants: {
+    variant: {
+      primary: 'livelist-primary-classes',
+      secondary: 'livelist-secondary-classes'
+    }
+  }
+})
 
 export interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary'
@@ -76,6 +88,9 @@ export const Button: Component<ButtonProps> = (props) => {
 - **Vite**: Builds library as ES modules only with external dependencies
 - **CSS**: Components use Tailwind classes with `livelist-` prefix; example app includes full Tailwind setup
 - **Module System**: Pure ESM (no CommonJS builds)
+- **Path Aliases**: 
+  - `livelist-components` → `packages/core/src`
+  - `~/` → `packages/core/src/`
 
 ### Testing
 No testing framework is currently set up. When implementing tests, consider adding Vitest with @solidjs/testing-library.
@@ -88,6 +103,8 @@ No testing framework is currently set up. When implementing tests, consider addi
 - All exports must be added to `/packages/core/src/index.tsx`
 - Package is published as `livelist-components` (without scope)
 - Tailwind CSS classes use `livelist-` prefix to avoid conflicts
+- Uses pnpm catalog for dependency version management (see pnpm-workspace.yaml)
+- Changesets configured to ignore example package in releases
 
 # important-instruction-reminders
 Do what has been asked; nothing more, nothing less.
