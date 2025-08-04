@@ -41,7 +41,9 @@
     "clsx": "catalog:",
     "dayjs": "catalog:",
     "lodash-es": "catalog:",
-    "tailwind-merge": "catalog:"
+    "tailwind-merge": "catalog:",
+    "tailwindcss": "catalog:",
+    "tailwindcss-animate": "catalog:"
   },
   "devDependencies": {
     "@types/lodash-es": "catalog:",
