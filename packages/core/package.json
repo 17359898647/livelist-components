@@ -1,7 +1,7 @@
 {
   "name": "livelist-components",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "packageManager": "pnpm@9.14.2",
   "description": "Core components for livelist-components library",
   "repository": "https://github.com/17359898647/livelist-components.git",

@@ -1,5 +1,11 @@
 # livelist-components
 
+## 2.0.0
+
+### Major Changes
+
+- use tailwindcss3
+
 ## 1.0.0
 
 ### Major Changes
