@@ -1,3 +1,4 @@
+import tailwindcss from 'eslint-plugin-tailwindcss'
 import eslint from '@antfu/eslint-config'
 
 export default eslint({
@@ -59,6 +60,18 @@ export default eslint({
           order: 'asc',
         },
       }],
+    },
+  },
+  plugins: {
+    tailwindcss,
+  },
+  rules: {
+    ...tailwindcss.configs.recommended.rules,
+    'tailwindcss/no-custom-classname': 0,
+  },
+  settings: {
+    tailwindcss: {
+      config: 'packages/core/tailwind.config.js',
     },
   },
 })

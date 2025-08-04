@@ -8,7 +8,7 @@ import {
 
 export function NumberFieldDemo() {
   return (
-    <NumberField class="w-36" defaultValue={40}>
+    <NumberField class="livelist-w-36" defaultValue={40}>
       <NumberFieldGroup>
         <NumberFieldInput />
         <NumberFieldIncrementTrigger />
