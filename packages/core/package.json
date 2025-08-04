@@ -46,14 +46,8 @@
   "devDependencies": {
     "@types/lodash-es": "catalog:",
     "@types/node": "catalog:",
-    "@unocss/postcss": "catalog:",
-    "@unocss/preset-rem-to-px": "catalog:",
-    "@unocss/preset-wind4": "catalog:",
-    "@unocss/transformer-directives": "catalog:",
-    "@unocss/transformer-variant-group": "catalog:",
     "autoprefixer": "catalog:",
     "postcss": "catalog:",
-    "unocss": "catalog:",
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:",
     "vite-plugin-solid": "catalog:"
