@@ -21,7 +21,8 @@
     "clean": "pnpm -r run clean && rimraf node_modules",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "pnpm --filter livelist-components build && changeset publish"
+    "release": "pnpm --filter livelist-components build && changeset publish",
+    "tag:push": "./scripts/tag-and-push.sh"
   },
   "dependencies": {
     "@antfu/eslint-config": "catalog:",
